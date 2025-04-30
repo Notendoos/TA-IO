@@ -13,7 +13,8 @@ const Toggle: FunctionComponent<{onClick:Function, isActive?:boolean}> = ({onCli
   }
 
   return (
-    <div className="flex flex-row-reverse">
+    <div className="flex flex-row">
+      <b>Favorite: </b>
       <button
         type="button"
         className={clsx(
@@ -32,7 +33,6 @@ const Toggle: FunctionComponent<{onClick:Function, isActive?:boolean}> = ({onCli
           )}
         ></span>
       </button>
-      <b>Favorite: </b>
     </div>
   );
 };
