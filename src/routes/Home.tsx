@@ -32,9 +32,7 @@ const Home: FunctionComponent = () => {
     }
   }, [state.movies, state.localMovies]);
 
-  return state.isLoading ? (
-    <Spinner />
-  ) : movieResults.length > 1 ? (
+  return !state.isLoading ?  movieResults.length > 1 ? (
     <ul
       role="list"
       className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
@@ -46,6 +44,8 @@ const Home: FunctionComponent = () => {
         />
       ))}
     </ul>
+  ) : (
+    <Spinner />
   ) : state.lastQuery !== "" ? (
     <span>No Results Found</span>
   ) : (
